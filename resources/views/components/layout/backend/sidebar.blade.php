@@ -51,7 +51,7 @@
                         </p>
                     </a>
                 </li>
-
+{{-- 
                 <li class="nav-item">
                     <a href="{{ url('admin/wilayah') }}" class="nav-link {{ checkRouteActive('admin/wilayah') }}">
                         <i class="nav-icon fas fa-university"></i>
@@ -59,7 +59,7 @@
                             Wilayah
                         </p>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a href="{{ url('admin/tempat') }}" class="nav-link {{ checkRouteActive('admin/tempat') }}">

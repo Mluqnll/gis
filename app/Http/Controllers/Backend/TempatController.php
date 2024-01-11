@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tempat;
+use App\Models\Wilayah;
 use Illuminate\Http\Request;
 
 class TempatController extends Controller
@@ -22,7 +23,9 @@ class TempatController extends Controller
      */
     public function create()
     {
-        return view('backend.tempat.create');
+        $data['list_wilayah'] = Wilayah::all();
+        // return $data;
+        return view('backend.tempat.create', $data);
     }
 
     /**
@@ -31,13 +34,13 @@ class TempatController extends Controller
     public function store(Request $request)
     {
         $tempat = new Tempat();
+        $tempat->id_wilayah = request('id_wilayah');
         $tempat->nama_tempat = request('nama_tempat');
-        $tempat->lat = request('lat');
-        $tempat->long = request('long');
+        $tempat->posisi = request('posisi');
         $tempat->deskripsi = request('deskripsi');
         $tempat->handleUploadFoto();
         $tempat->handleUploadIcon();
-
+        // return $tempat;
         $tempat->save();
 
         return redirect('admin/tempat')->with('success', 'Data berhasil ditambahkan');
@@ -58,7 +61,8 @@ class TempatController extends Controller
     public function edit(string $tempat)
     {
         $data['tempat'] = Tempat::find($tempat);
-        // return $data;
+        $data['list_wilayah'] = Wilayah::all();
+        return $data;
         return view('backend.tempat.edit', $data);
     }
 
@@ -68,13 +72,13 @@ class TempatController extends Controller
     public function update(Request $request, string $tempat)
     {
         $tempat = Tempat::find($tempat);
+        $tempat->id_wilayah = request('id_wilayah');
         $tempat->nama_tempat = request('nama_tempat');
-        $tempat->lat = request('lat');
-        $tempat->long = request('long');
+        $tempat->posisi = request('posisi');
         $tempat->deskripsi = request('deskripsi');
         if (request('foto')) $tempat->handleUploadFoto();
         if (request('icon')) $tempat->handleUploadIcon();
-        // return $tempat;
+        return $tempat;
         $tempat->save();
 
         return redirect('admin/tempat')->with('success', 'Data berhasil diedit');

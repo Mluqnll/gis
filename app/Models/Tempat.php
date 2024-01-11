@@ -9,6 +9,10 @@ class Tempat extends Model
 {
     protected $table = 'tempat';
 
+    public function wilayah(){
+        return $this->belongsTo(Wilayah::class, 'id_wilayah');
+    }
+    
     function handleUploadFoto()
     {
         $this->handleDelete();

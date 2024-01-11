@@ -26,8 +26,8 @@ Route::prefix('admin')->group(function(){
     include "_/admin.php";
 });
 
-Route::get('/', [WebController::class, 'peta']);
-// Route::get('peta', [WebController::class, 'peta']);
+Route::get('home', [WebController::class, 'index']);
+Route::get('detail-wilayah/{id}', [WebController::class, 'show']);
 
 
 //login

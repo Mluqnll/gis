@@ -12,11 +12,11 @@ class edit extends Component
      * Create a new component instance.
      */
     public $url;
-     public $id;
+    public $id;
     public function __construct($url, $id)
     {
-        $this ->url=$url;
-        $this ->id=$id;
+        $this->url = $url;
+        $this->id = $id;
 
     }
 

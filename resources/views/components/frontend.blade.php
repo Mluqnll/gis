@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.navbar -->
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper mt-5">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             {{-- <div class="content-header">
                 <div class="container">
@@ -54,13 +54,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.content-header -->
 
             <!-- Main content -->
-            {{ $slot }}
+
+
+                    {{ $slot }}
+
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        <x-layout.frontend.footer />
+        {{-- <x-layout.frontend.footer /> --}}
 
     </div>
     <!-- ./wrapper -->
@@ -74,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="{{ url('public/assets') }}/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ url('public/assets') }}/dist/js/demo.js"></script>
+    {{-- <script src="{{ url('public/assets') }}/dist/js/demo.js"></script> --}}
 </body>
 
 </html>

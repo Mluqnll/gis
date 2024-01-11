@@ -1,3 +1,14 @@
+<style>
+    .color-palette {
+      height: 35px;
+      width: 35px;
+      line-height: 35px;
+      text-align: right;
+      padding-right: .75rem;
+      border: 2px solid white;
+      border-radius: 15px;
+    }
+</style>
 <x-backend>
     <div class="container-fluid">
         <div class="row">
@@ -8,7 +19,7 @@
                         <a href="{{ url('admin/wilayah/create') }}" class="btn btn-primary float-right mb-10"> <span
                                 class="fa fa-plus"></span> Tambah Data</a>
                         <h4 class="card-title">
-                            <strong>Data Pengelola</strong>
+                            <strong>Data wilayah</strong>
                         </h4>
 
                     </div>
@@ -17,33 +28,27 @@
                         <table id="example2" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center">Aksi</th>
+                                    <th class="text-center" width=50px>No</th>
+                                    <th class="text-center" width=50px>Aksi</th>
                                     <th class="text-center">Nama Wilayah</th>
-                                    <th class="text-center">Jumlah</th>
-                                    <th class="text-center">Luas Wilayah</th>
+                                    <th class="text-center" width=500px>Warna</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($list_pengelola as $pengelola)
+                                @foreach ($list_wilayah as $wilayah)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td class="text-center">
                                             <div class="btn-group">
-                                                <x-layout.button.info url="pengelola" id="{{ $pengelola->id }}" />
-                                                <x-layout.button.edit url="pengelola" id="{{ $pengelola->id }}" />
-                                                <x-layout.button.delete url="pengelola" id="{{ $pengelola->id }}" />
+                                                <x-layout.button.info url="admin/wilayah" id="{{ $wilayah->id }}" />
+                                                <x-layout.button.edit url="admin/wilayah" id="{{ $wilayah->id }}" />
+                                                <x-layout.button.delete url="admin/wilayah" id="{{ $wilayah->id }}" />
                                             </div>
                                         </td>
-                                        <td class="text-center">{{ $pengelola->nama }}</td>
-                                        <td class="text-center">{{ $pengelola->username }}</td>
-                                        <td class="text-center" style="width: 20%">
-                                            <img src="{{ url("public/$pengelola->foto") }}"
-                                                style="width:30%; height:30%;"
-                                                onerror="this.src='https://bootdey.com/img/Content/avatar/avatar7.png';">
-                                        </td>
+                                        <td class="text-center">{{ $wilayah->nama_wilayah }}</td>
+                                        <td class="{{$wilayah->warna}} color-palette" style="background-color: {{$wilayah->warna}}"></td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
 
                             </tbody>
                         </table>

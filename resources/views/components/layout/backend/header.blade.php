@@ -13,16 +13,7 @@
                 <i class="far fa-user"></i>
 
             </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-users"></i> Profile
-
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-cog"></i> Setting
-                </a>
+            <div class="dropdown-menu dropdown-menu dropdown-menu-right">
                 <div class="dropdown-divider"></div>
                 <a onclick="return confirm('Apakah Anda Yakin Ingin Keluar?')" href="{{ url('logout') }}" class="dropdown-item">
                     <i class="fa fa-arrow-circle-left"></i> Logout

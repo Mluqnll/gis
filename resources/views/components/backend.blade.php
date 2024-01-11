@@ -22,6 +22,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
         href="{{ url('public/assets') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ url('public/assets') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet"
+        href="{{ url('public/assets') }}/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
     @vite ('resources/css/app.css')
 </head>
 
@@ -38,10 +42,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper mt-4">
-
-            <!-- Main content -->
-            {{ $slot }}
+        <div class="content-header">
+            <div class="content-wrapper p-5">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-12">
+                            <h1 class="m-0"><x-layout.utilts.notif /></h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div>
+                <!-- Content Header (Page header) -->
+                {{ $slot }}
+            </div>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -74,6 +86,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ url('public/assets') }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="{{ url('public/assets') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="{{ url('public/assets') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="{{ url('public/assets') }}/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
 
     <script>
         $(function() {
@@ -84,22 +98,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </script>
 
     <script>
-        $(function () {
-          $("#example1").DataTable({
-            "responsive": true, "lengthChange": false, "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-          $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": true,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-          });
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-      </script>
+
+        //Colorpicker
+        $('.my-colorpicker1').colorpicker()
+        //color picker with addon
+        $('.my-colorpicker2').colorpicker()
+
+        $('.my-colorpicker2').on('colorpickerChange', function(event) {
+            $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+        })
+    </script>
 </body>
 
 </html>

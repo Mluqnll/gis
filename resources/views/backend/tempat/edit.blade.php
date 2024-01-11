@@ -26,7 +26,7 @@
                                     <div class="info-box bg-light">
                                         <div class="info-box-content">
                                             <img src="{{ url("public/$tempat->icon") }}"
-                                                style="max-width:100%; max-height:100%"
+                                                style="max-width:20%; max-height:50%"
                                                 onerror="this.src='https://bootdey.com/img/Content/avatar/avatar7.png';">
                                         </div>
                                     </div>
@@ -52,20 +52,12 @@
                                         accept=".png, .jpg, .jpeg">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="lat" class="col-sm-2 col-form-label">Latitude</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="lat" name="lat"
-                                        placeholder="Masukkan Latitude" value="{{ $tempat->lat }}">
-                                </div>
+                            <div class="form-group">
+                                <label for="posisi">Posisi</label>
+                                <input type="text" class="form-control" id="posisi" name="posisi"
+                                    placeholder="Masukkan Latitude dan Longitude" value="{{$tempat->posisi}}">
                             </div>
-                            <div class="form-group row">
-                                <label for="long" class="col-sm-2 col-form-label">Longitude</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="long" name="long"
-                                        placeholder="Masukkan Longitude" value="{{ $tempat->long }}">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi Tempat</label>
                                 <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" style="height: 100%;"

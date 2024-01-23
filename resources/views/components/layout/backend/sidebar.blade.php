@@ -51,6 +51,7 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="{{ url('admin/tentang') }}" class="nav-link {{ checkRouteActive('admin/tentang') }}">
                         <i class="nav-icon fas fa-exclamation"></i>
@@ -61,19 +62,19 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url('admin/wilayah') }}" class="nav-link {{ checkRouteActive('admin/wilayah') }}">
-                        <i class="nav-icon fas fa-map"></i>
+                    <a href="{{ url('admin/penginapan') }}" class="nav-link {{ checkRouteActive('admin/penginapan') }}">
+                        <i class="nav-icon fas fa-house-user"></i>
                         <p>
-                            Wilayah
+                            Penginapan
                         </p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url('admin/tempat') }}" class="nav-link {{ checkRouteActive('admin/tempat') }}">
-                        <i class="nav-icon fas fa-university"></i>
+                    <a href="{{ url('admin/wilayah') }}" class="nav-link {{ checkRouteActive('admin/wilayah') }}">
+                        <i class="nav-icon fas fa-map"></i>
                         <p>
-                            Tempat
+                            Destinasi
                         </p>
                     </a>
                 </li>

@@ -150,12 +150,24 @@ class WilayahController extends Controller
         $tempat->nama_tempat = request('nama_tempat');
         $tempat->posisi = request('posisi');
         $tempat->deskripsi = request('deskripsi');
-        if (request('foto')) $tempat->handleUploadFoto();
-        if (request('icon')) $tempat->handleUploadIcon();
+        if (request('foto'))
+            $tempat->handleUploadFoto();
+        if (request('icon'))
+            $tempat->handleUploadIcon();
         // return $tempat;
         $tempat->save();
         // $wilayah = $tempat->id_wilayah;
 
         return back()->with('success', 'Data Berhasil Diedit');
+    }
+
+    public function hapusTempat($tempat)
+    {
+        $tempat = Tempat::find($tempat);
+        $tempat->handleDelete();
+        $tempat->handleDeleteIcon();
+        // return $tempat;
+        $tempat->delete();
+        return back()->with('danger', 'Data Berhasil Dihapus');
     }
 }

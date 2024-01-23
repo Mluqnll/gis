@@ -224,7 +224,7 @@
                                                 <a href="#" class="btn btn-warning" data-toggle="modal"
                                                     data-target="#modal-edit-tempat{{ $tempat->id }}"><i
                                                         class="fas fa-edit"></i></a>
-                                                <a href="{{ url('admin/wilayah/delete-tempat', $tempat->id) }}"
+                                                <a href="{{ url('admin/wilayah/hapus-tempat', $tempat->id) }}"
                                                     class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                             </div>
                                         </td>
@@ -336,44 +336,44 @@
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                            @endforeach
-                        </table>
-                    </div>
-                    <div class="modal fade" id="modal-info{{$tempat->id}}">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" style="font-family:serif">Detail Data Tempat
-                                    </h4>
-                                    <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-12 col-md-12 col-lg-6 order-2 order-md-1">
-                                            <div class="row">
-                                                <div class="col-12 col-sm-12">
-                                                    <div class="info-box bg-light">
-                                                        <div class="info-box-content">
-                                                            <span class="info-box-text text-center text-muted">Foto Tempat</span>
-                                                            <img src="{{ url("public/$tempat->foto") }}" style="width:auto; height:auto"
-                                                                onerror="this.src='https://bootdey.com/img/Content/avatar/avatar7.png';">
+                                <div class="modal fade" id="modal-info{{$tempat->id}}">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" style="font-family:serif">Detail Data Tempat
+                                                </h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-12 col-lg-6 order-2 order-md-1">
+                                                        <div class="row">
+                                                            <div class="col-12 col-sm-12">
+                                                                <div class="info-box bg-light">
+                                                                    <div class="info-box-content">
+                                                                        <span class="info-box-text text-center text-muted">Foto Tempat</span>
+                                                                        <img src="{{ url("public/$tempat->foto") }}" style="width:auto; height:auto"
+                                                                            onerror="this.src='https://bootdey.com/img/Content/avatar/avatar7.png';">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-6 order-1 order-md-2">
+                                                        <h3 class="text-primary">{{ $tempat->nama_tempat }}</h3>
+                                                        <p class="text-muted">{{ $tempat->deskripsi }}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-12 col-lg-6 order-1 order-md-2">
-                                            <h3 class="text-primary">{{ $tempat->nama_tempat }}</h3>
-                                            <p class="text-muted">{{ $tempat->deskripsi }}
-                                            </p>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        </table>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -415,7 +415,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="posisi">Posisi</label>
+                                    <label for="posisi">Posisi (-2.624799831746xxx, 110.14455275696xxx)</label>
                                     <input type="text" class="form-control" id="posisi" name="posisi"
                                         placeholder="Masukkan Latitude dan Longitude">
                                 </div>
